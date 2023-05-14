@@ -70,4 +70,14 @@ public class Livro {
     public void setAutor(Autor autor) {
         this.autor = autor;
     }
+
+    public Livro(Autor autor){
+        //encadeamento de metodos no encapsulamento
+        this();
+        this.autor = autor;
+    }
+
+    public Livro(){
+        this.isbn = "000-00-00000-00-0";
+    }
 }
