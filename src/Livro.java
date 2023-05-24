@@ -5,6 +5,8 @@ public class Livro {
     private String isbn;
     private Autor autor;
 
+    private boolean impresso;
+
     boolean temAutor(){
         return this.autor != null;
     }
@@ -25,6 +27,8 @@ public class Livro {
 
     public boolean aplicaDescontoDe(double porcentagem){
         if (porcentagem > 0.3){
+            return false;
+        } else if (!this.impresso && porcentagem > 0.15) {
             return false;
         }
         this.valor -= this.valor * porcentagem;
@@ -75,6 +79,7 @@ public class Livro {
         //encadeamento de metodos no encapsulamento
         this();
         this.autor = autor;
+        this.impresso = true;
     }
 
     public Livro(){

@@ -27,5 +27,9 @@ public class CadastroDeLivros {
 
         //outroLivro.setAutor(outroAutor);
         outroLivro.mostrarDetalhes();
+
+        Autor ebookAutor = new Autor();
+        Ebook ebook = new Ebook(ebookAutor);
+        ebook.setNome("Java 8 Prático");
     }
 }
