@@ -1,9 +1,14 @@
+package br.com.casadocodigo.livraria.testes;
+
+import br.com.casadocodigo.livraria.*;
+import br.com.casadocodigo.livraria.produtos.*;
+
 public class RegrasDeDesconto {
     public static void main(String[] args) {
         Autor autor = new Autor();
         autor.setNome("Rodrigo Turini");
 
-        Livro livro = new Livro(autor);
+        Livro livro = new MiniLivro(autor);
         livro.setValor(59.90);
 
         if (!livro.aplicaDescontoDe(0.3)){
