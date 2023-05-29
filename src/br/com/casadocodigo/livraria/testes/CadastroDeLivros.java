@@ -1,3 +1,9 @@
+package br.com.casadocodigo.livraria.testes;
+
+import br.com.casadocodigo.livraria.Autor;
+import br.com.casadocodigo.livraria.produtos.*;
+import br.com.casadocodigo.livraria.testes.*;
+
 public class CadastroDeLivros {
     public static void main(String[] args) {
 

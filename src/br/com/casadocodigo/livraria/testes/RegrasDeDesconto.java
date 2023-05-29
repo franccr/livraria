@@ -1,3 +1,8 @@
+package br.com.casadocodigo.livraria.testes;
+
+import br.com.casadocodigo.livraria.*;
+import br.com.casadocodigo.livraria.produtos.*;
+
 public class RegrasDeDesconto {
     public static void main(String[] args) {
         Autor autor = new Autor();

@@ -1,4 +1,11 @@
-public abstract class Livro {
+package br.com.casadocodigo.livraria.produtos;
+
+import br.com.casadocodigo.livraria.Autor;
+import br.com.casadocodigo.livraria.exception.AutorNuloException;
+import br.com.casadocodigo.livraria.produtos.Produto;
+import br.com.casadocodigo.livraria.produtos.Promocional;
+
+public abstract class Livro implements Produto, Promocional {
     private String nome;
     private String descricao;
     private double valor;
@@ -11,7 +18,7 @@ public abstract class Livro {
         return this.autor != null;
     }
 
-    void mostrarDetalhes() {
+    public void mostrarDetalhes() {
         System.out.println("Mostrando detalhes do livro ");
         System.out.println("Nome: " + nome);
         System.out.println("Descrição: " + descricao);
@@ -24,8 +31,6 @@ public abstract class Livro {
 
         System.out.println("--");
     }
-
-    public abstract boolean aplicaDescontoDe(double porcentagem);
 
     public void setValor(double valor){
         this.valor = valor;
@@ -68,13 +73,10 @@ public abstract class Livro {
     }
 
     public Livro(Autor autor){
-        //encadeamento de metodos no encapsulamento
-        this();
+        if (autor == null){
+            throw new AutorNuloException("O Autor do livro não pode ser nulo");
+        }
         this.autor = autor;
-        this.impresso = true;
-    }
-
-    public Livro(){
         this.isbn = "000-00-00000-00-0";
     }
 }
