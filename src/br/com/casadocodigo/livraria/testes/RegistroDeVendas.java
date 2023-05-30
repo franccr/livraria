@@ -3,6 +3,8 @@ package br.com.casadocodigo.livraria.testes;
 import br.com.casadocodigo.livraria.*;
 import br.com.casadocodigo.livraria.produtos.*;
 
+import java.util.List;
+
 public class RegistroDeVendas {
     public static void main(String[] args) {
 
@@ -24,20 +26,11 @@ public class RegistroDeVendas {
 
         System.out.println("Total " + carrinho.getTotal());
 
-        Produto[] produtos = carrinho.getProdutos();
+        List<Produto> produtos = carrinho.getProdutos();
 
         //Enhanced-for
-        for(int i = 0; i <= produtos.length; i++) {
-            try {
-                Produto produto = produtos[i];
-                if (produto != null) {
-                    System.out.println(produto.getValor());
-                }
-            } catch (ArrayIndexOutOfBoundsException e){
-                System.out.println("deu exception no indice: " + i);
-            } catch (NullPointerException e){
-                System.out.println("A array não foi instanciado!");
-            }
+        for(Produto produto : produtos) {
+            System.out.println(produto);
         }
 
         System.out.println("Fui executado!");
