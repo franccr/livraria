@@ -79,4 +79,10 @@ public abstract class Livro implements Produto, Promocional {
         this.autor = autor;
         this.isbn = "000-00-00000-00-0";
     }
+
+    @Override
+    public int compareTo(Produto outro){
+        return (int) (this.getValor() - outro.getValor());
+    }
+
 }
